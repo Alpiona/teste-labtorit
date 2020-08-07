@@ -9,7 +9,6 @@ import {
   DeleteDateColumn,
 } from 'typeorm';
 
-import Brand from '@modules/brands/infra/typeorm/entities/Brand';
 import Model from '@modules/models/infra/typeorm/entities/Model';
 
 @Entity('vehicles')
@@ -19,13 +18,6 @@ export default class Vehicle {
 
   @Column()
   value: number;
-
-  // @Column()
-  // brand_id: number;
-
-  // @ManyToOne(() => Brand)
-  // @JoinColumn({ name: 'brand_id' })
-  // brand: Brand;
 
   @Column()
   model_id: number;

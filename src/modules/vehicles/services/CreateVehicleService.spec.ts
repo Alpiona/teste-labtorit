@@ -1,6 +1,5 @@
 import AppError from '@shared/errors/AppError';
 
-import FakeBrandsRepository from '@modules/brands/repositories/fakes/FakeBrandsRepository';
 import FakeModelsRepository from '@modules/models/repositories/fakes/FakeModelsRepository';
 import FakeVehiclesRepository from '../repositories/fakes/FakeVehiclesRepository';
 import CreateVehicleService from './CreateVehicleService';

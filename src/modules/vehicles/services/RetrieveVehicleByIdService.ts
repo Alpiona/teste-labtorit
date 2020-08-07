@@ -10,9 +10,9 @@ interface IRequest {
 }
 
 @injectable()
-export default class RetrieveBrandByIdService {
+export default class RetrieveVehicleByIdService {
   constructor(
-    @inject('VehiclesRespository')
+    @inject('VehiclesRepository')
     private vehiclesRepository: IVehiclesRepository,
   ) {}
 

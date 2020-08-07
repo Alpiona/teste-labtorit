@@ -1,17 +1,17 @@
 import FakeModelsRepository from '@modules/models/repositories/fakes/FakeModelsRepository';
 import FakeVehiclesRepository from '../repositories/fakes/FakeVehiclesRepository';
-import RetrieveVehiclesListService from './RetrieveVehiclesListService';
+import RetrieveVehiclesListByModelService from './RetrieveVehiclesListByModelService';
 
 let fakeModelsRepository: FakeModelsRepository;
 let fakeVehiclesRepository: FakeVehiclesRepository;
-let retrieveVehiclesListService: RetrieveVehiclesListService;
+let retrieveVehiclesListService: RetrieveVehiclesListByModelService;
 
-describe('RetrieveVehiclesListOfSameModel', () => {
+describe('RetrieveVehiclesListByModel', () => {
   beforeEach(() => {
     fakeModelsRepository = new FakeModelsRepository();
     fakeVehiclesRepository = new FakeVehiclesRepository();
 
-    retrieveVehiclesListService = new RetrieveVehiclesListService(
+    retrieveVehiclesListService = new RetrieveVehiclesListByModelService(
       fakeModelsRepository,
       fakeVehiclesRepository,
     );

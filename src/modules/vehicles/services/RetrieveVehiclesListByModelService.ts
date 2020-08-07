@@ -9,7 +9,7 @@ interface IRequest {
 }
 
 @injectable()
-export default class RetrieveVehiclesListService {
+export default class RetrieveVehiclesListByModelService {
   constructor(
     @inject('ModelsRepository')
     private modelsRepository: IModelsRepository,
