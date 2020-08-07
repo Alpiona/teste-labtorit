@@ -4,6 +4,9 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 
 import Brand from '@modules/brands/infra/typeorm/entities/Brand';
@@ -17,12 +20,12 @@ export default class Vehicle {
   @Column()
   value: number;
 
-  @Column()
-  brand_id: number;
+  // @Column()
+  // brand_id: number;
 
-  @ManyToOne(() => Brand)
-  @JoinColumn({ name: 'brand_id' })
-  brand: Brand;
+  // @ManyToOne(() => Brand)
+  // @JoinColumn({ name: 'brand_id' })
+  // brand: Brand;
 
   @Column()
   model_id: number;
@@ -36,4 +39,13 @@ export default class Vehicle {
 
   @Column()
   fuel: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  @DeleteDateColumn()
+  deleted_at: Date;
 }
