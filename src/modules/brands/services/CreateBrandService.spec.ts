@@ -6,7 +6,7 @@ import CreateBrandService from './CreateBrandService';
 let fakeBrandsRepository: FakeBrandsRepository;
 let createBrandService: CreateBrandService;
 
-describe('CreateBrand', () => {
+describe('CreateBrandById', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
 
@@ -26,7 +26,7 @@ describe('CreateBrand', () => {
       name: 'Brand Name Test',
     });
 
-    expect(
+    await expect(
       createBrandService.execute({
         name: 'Brand Name Test',
       }),

@@ -24,7 +24,7 @@ export default class UpdateBrandService {
 
     brand.name = name;
 
-    this.brandsRepository.save(brand);
+    await this.brandsRepository.save(brand);
 
     return brand;
   }

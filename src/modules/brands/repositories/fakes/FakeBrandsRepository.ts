@@ -17,13 +17,13 @@ export default class BrandsRepository implements IBrandsRepository {
   }
 
   public async findById(id: number): Promise<Brand | undefined> {
-    const findBrand = this.brands.find(b => b.id === id);
+    const findBrand = this.brands.find(b => b.id === id && !b.deleted_at);
 
     return findBrand;
   }
 
   public async findByName(name: string): Promise<Brand | undefined> {
-    const findBrand = this.brands.find(b => b.name === name);
+    const findBrand = this.brands.find(b => b.name === name && !b.deleted_at);
 
     return findBrand;
   }
@@ -41,7 +41,7 @@ export default class BrandsRepository implements IBrandsRepository {
   }
 
   public async delete(id: number): Promise<void> {
-    const brandIndex = this.brands.findIndex(b => b.id === id);
+    const brandIndex = this.brands.findIndex(b => b.id === id && !b.deleted_at);
 
     this.brands[brandIndex].deleted_at = new Date();
   }

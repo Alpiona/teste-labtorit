@@ -6,7 +6,7 @@ import UpdateBrandService from './UpdateBrandService';
 let fakeBrandsRepository: FakeBrandsRepository;
 let updateBrandService: UpdateBrandService;
 
-describe('RetrieveBrandById', () => {
+describe('UpdateBrandById', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
 

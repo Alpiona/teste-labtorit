@@ -6,7 +6,7 @@ import DeleteBrandService from './DeleteBrandService';
 let fakeBrandsRepository: FakeBrandsRepository;
 let deleteBrandService: DeleteBrandService;
 
-describe('DeleteBrand', () => {
+describe('DeleteBrandById', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
 
@@ -24,7 +24,7 @@ describe('DeleteBrand', () => {
 
     const brand = await fakeBrandsRepository.findById(createdBrand.id);
 
-    expect(brand).toHaveProperty('deleted_at');
+    expect(brand).toBeUndefined();
   });
 
   it('should not be able to delete a brand with invalid ID', async () => {
