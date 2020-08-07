@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
 import { errors } from 'celebrate';
+import 'express-async-errors';
 
 import routes from '@shared/infra/http/routes';
 import AppError from '@shared/errors/AppError';
