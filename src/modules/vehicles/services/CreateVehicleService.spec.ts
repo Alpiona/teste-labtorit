@@ -5,14 +5,12 @@ import FakeModelsRepository from '@modules/models/repositories/fakes/FakeModelsR
 import FakeVehiclesRepository from '../repositories/fakes/FakeVehiclesRepository';
 import CreateVehicleService from './CreateVehicleService';
 
-let fakeBrandsRepository: FakeBrandsRepository;
 let fakeModelsRepository: FakeModelsRepository;
 let fakeVehiclesRepository: FakeVehiclesRepository;
 let createVehicleService: CreateVehicleService;
 
 describe('CreateVehicle', () => {
   beforeEach(() => {
-    fakeBrandsRepository = new FakeBrandsRepository();
     fakeModelsRepository = new FakeModelsRepository();
     fakeVehiclesRepository = new FakeVehiclesRepository();
 
@@ -23,13 +21,9 @@ describe('CreateVehicle', () => {
   });
 
   it('should be able to create a new vehicle', async () => {
-    const brand = await fakeBrandsRepository.create({
-      name: 'Brand Name Test',
-    });
-
     const model = await fakeModelsRepository.create({
       name: 'Model Name Test',
-      brand_id: brand.id,
+      brand_id: 1,
     });
 
     const vehicle = await createVehicleService.execute({

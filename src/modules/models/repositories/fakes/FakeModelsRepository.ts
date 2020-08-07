@@ -16,13 +16,13 @@ export default class ModelsRepository implements IModelsRepository {
   }
 
   public async findById(id: number): Promise<Model | undefined> {
-    const findBrand = this.models.find(m => m.id === id);
+    const findBrand = this.models.find(m => m.id === id && !m.deleted_at);
 
     return findBrand;
   }
 
   public async findByName(name: string): Promise<Model | undefined> {
-    const findBrand = this.models.find(m => m.name === name);
+    const findBrand = this.models.find(m => m.name === name && !m.deleted_at);
 
     return findBrand;
   }
@@ -40,7 +40,7 @@ export default class ModelsRepository implements IModelsRepository {
   }
 
   public async delete(id: number): Promise<void> {
-    const brandIndex = this.models.findIndex(m => m.id === id);
+    const brandIndex = this.models.findIndex(m => m.id === id && !m.deleted_at);
 
     this.models[brandIndex].deleted_at = new Date();
   }

@@ -1,7 +1,6 @@
 import { injectable, inject } from 'tsyringe';
 
 import IBrandsRepository from '@modules/brands/repositories/IBrandsRepository';
-import AppError from '@shared/errors/AppError';
 import IModelsRepository from '../repositories/IModelsRepository';
 
 import Model from '../infra/typeorm/entities/Model';
@@ -21,9 +20,6 @@ export default class RetrieveModelsListByBrandIdService {
   ) {}
 
   public async execute({ brand_id }: IRequest): Promise<Model[]> {
-    const brand = await this.brandsRepository.findById(brand_id);
-    if (!brand) throw new AppError('The brand_id is invalid');
-
     const models = await this.modelsRepository.findAllByBrandId(brand_id);
 
     return models;

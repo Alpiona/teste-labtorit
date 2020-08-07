@@ -8,7 +8,7 @@ let fakeBrandsRepository: FakeBrandsRepository;
 let fakeModelsRepository: FakeModelsRepository;
 let updateModelService: UpdateModelService;
 
-describe('RetrieveBrandById', () => {
+describe('UpdateModelById', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
     fakeModelsRepository = new FakeModelsRepository();

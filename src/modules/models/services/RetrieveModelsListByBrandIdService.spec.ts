@@ -1,5 +1,3 @@
-import AppError from '@shared/errors/AppError';
-
 import FakeBrandsRepository from '@modules/brands/repositories/fakes/FakeBrandsRepository';
 import FakeModelsRepository from '../repositories/fakes/FakeModelsRepository';
 import RetrieveModelsListByBrandIdService from './RetrieveModelsListByBrandIdService';
@@ -8,7 +6,7 @@ let fakeBrandsRepository: FakeBrandsRepository;
 let fakeModelsRepository: FakeModelsRepository;
 let retrieveModelsListByBrandIdService: RetrieveModelsListByBrandIdService;
 
-describe('RetrieveBrandsList', () => {
+describe('RetrieveModelsListByBrandId', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
     fakeModelsRepository = new FakeModelsRepository();
@@ -72,13 +70,5 @@ describe('RetrieveBrandsList', () => {
     });
 
     expect(models).toEqual([model2]);
-  });
-
-  it('should not able to retrieve the list of models using an invalid brand ID', async () => {
-    await expect(
-      retrieveModelsListByBrandIdService.execute({
-        brand_id: 1,
-      }),
-    ).rejects.toBeInstanceOf(AppError);
   });
 });

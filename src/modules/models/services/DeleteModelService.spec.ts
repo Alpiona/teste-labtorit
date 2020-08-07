@@ -6,7 +6,7 @@ import DeleteModelService from './DeleteModelService';
 let fakeModelsRepository: FakeModelsRepository;
 let deleteModelService: DeleteModelService;
 
-describe('DeleteModel', () => {
+describe('DeleteModelById', () => {
   beforeEach(() => {
     fakeModelsRepository = new FakeModelsRepository();
 
@@ -25,7 +25,7 @@ describe('DeleteModel', () => {
 
     const model = await fakeModelsRepository.findById(newModel.id);
 
-    expect(model).toHaveProperty('deleted_at');
+    expect(model).toBeUndefined();
   });
 
   it('should not be able to delete a model with invalid ID', async () => {

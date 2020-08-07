@@ -6,7 +6,7 @@ import CreateBrandService from './CreateBrandService';
 let fakeBrandsRepository: FakeBrandsRepository;
 let createBrandService: CreateBrandService;
 
-describe('CreateBrandById', () => {
+describe('CreateBrand', () => {
   beforeEach(() => {
     fakeBrandsRepository = new FakeBrandsRepository();
 
