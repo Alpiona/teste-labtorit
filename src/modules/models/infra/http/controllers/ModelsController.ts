@@ -30,7 +30,7 @@ export default class ModelsController {
 
     const model = await showModel.execute({ id: parseInt(model_id, 10) });
 
-    return response.json(model);
+    return response.json(classToClass(model));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {

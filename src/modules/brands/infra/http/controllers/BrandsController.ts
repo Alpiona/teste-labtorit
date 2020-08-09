@@ -24,7 +24,7 @@ export default class BrandsController {
 
     const brand = await showBrand.execute({ id: parseInt(brand_id, 10) });
 
-    return response.json(brand);
+    return response.json(classToClass(brand));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {

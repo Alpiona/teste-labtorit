@@ -31,7 +31,7 @@ export default class VehiclesController {
 
     const vehicle = await showVehicle.execute({ id: parseInt(vehicle_id, 10) });
 
-    return response.json(vehicle);
+    return response.json(classToClass(vehicle));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {

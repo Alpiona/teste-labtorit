@@ -6,6 +6,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
 @Entity('brands')
 export default class Brand {
@@ -16,11 +17,14 @@ export default class Brand {
   name: string;
 
   @CreateDateColumn()
+  @Exclude()
   created_at: Date;
 
   @UpdateDateColumn()
+  @Exclude()
   updated_at: Date;
 
   @DeleteDateColumn()
+  @Exclude()
   deleted_at: Date;
 }
