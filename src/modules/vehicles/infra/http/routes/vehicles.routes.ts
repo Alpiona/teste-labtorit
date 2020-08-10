@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
+import ensureAuthenticated from '@modules/admins/infra/http/middlewares/ensureAuthenticated';
 import VehiclesController from '../controllers/VehiclesController';
 
 const vehiclesRouter = Router();
@@ -17,6 +18,7 @@ vehiclesRouter.get(
 
 vehiclesRouter.get(
   '/:vehicle_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       vehicle_id: Joi.number().required(),
@@ -27,6 +29,7 @@ vehiclesRouter.get(
 
 vehiclesRouter.post(
   '/',
+  ensureAuthenticated,
   celebrate({
     [Segments.BODY]: {
       fuel: Joi.string().required(),
@@ -40,6 +43,7 @@ vehiclesRouter.post(
 
 vehiclesRouter.put(
   '/:vehicle_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       vehicle_id: Joi.number().required(),
@@ -56,6 +60,7 @@ vehiclesRouter.put(
 
 vehiclesRouter.delete(
   '/:vehicle_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       vehicle_id: Joi.number().required(),

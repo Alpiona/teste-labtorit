@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
+import ensureAuthenticated from '@modules/admins/infra/http/middlewares/ensureAuthenticated';
 import BrandsController from '../controllers/BrandsController';
 
 const brandsRouter = Router();
@@ -9,6 +10,7 @@ brandsRouter.get('/', brandsController.index);
 
 brandsRouter.get(
   '/:brand_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       brand_id: Joi.number().required(),
@@ -19,6 +21,7 @@ brandsRouter.get(
 
 brandsRouter.post(
   '/',
+  ensureAuthenticated,
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
@@ -29,6 +32,7 @@ brandsRouter.post(
 
 brandsRouter.put(
   '/:brand_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       brand_id: Joi.number().required(),
@@ -42,6 +46,7 @@ brandsRouter.put(
 
 brandsRouter.delete(
   '/:brand_id',
+  ensureAuthenticated,
   celebrate({
     [Segments.PARAMS]: {
       brand_id: Joi.number().required(),

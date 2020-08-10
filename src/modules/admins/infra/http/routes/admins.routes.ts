@@ -1,21 +1,22 @@
 import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
 
-import UsersController from '../controllers/UsersController';
+import AdminsController from '../controllers/AdminsController';
 
-const usersRouter = Router();
-const userController = new UsersController();
+const adminsRouter = Router();
+const adminsController = new AdminsController();
 
-usersRouter.post(
+adminsRouter.post(
   '/',
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
       email: Joi.string().email().required(),
       password: Joi.string().required(),
+      is_admin: Joi.boolean(),
     },
   }),
-  userController.create,
+  adminsController.create,
 );
 
-export default usersRouter;
+export default adminsRouter;

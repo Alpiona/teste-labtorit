@@ -9,8 +9,8 @@ import {
 
 import { Exclude } from 'class-transformer';
 
-@Entity('users')
-export default class User {
+@Entity('admins')
+export default class Admin {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
@@ -25,11 +25,14 @@ export default class User {
   password: string;
 
   @CreateDateColumn()
+  @Exclude()
   created_at: Date;
 
   @UpdateDateColumn()
+  @Exclude()
   updated_at: Date;
 
   @DeleteDateColumn()
+  @Exclude()
   deleted_at: Date;
 }
