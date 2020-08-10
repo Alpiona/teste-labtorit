@@ -26,7 +26,7 @@ By default, the routes are starting with ```http://localhost:3333```
 - Create: ```POST /api/admins``` [ADMIN] Create a new admin. Is necessary ```name```, ```email``` and ```password```
 
 ### Session
-- Create: ```POST /api/admins``` [ADMIN] create a new token to use routes for admins. Is necessary ```email``` and ```password```
+- Create: ```POST /api/sessions``` [ADMIN] Create a new token to use routes for admins. Is necessary ```email``` and ```password```
 
 To use the token on the routes you need, simply select authentication as a bearer token in your API test tool, and paste the token into the token field
 
