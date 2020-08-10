@@ -80,7 +80,7 @@ Example:
 ```
 
 ### Vehicles
-- Create: ```POST /api/vehicles [ADMIN]``` Should create a new vehicle. Is necessary ```value  ``` and ```brand_id``` 
+- Create: ```POST /api/vehicles [ADMIN]``` Should create a new vehicle. Is necessary ```value  ```, ```model_id```,  ```fuel``` and ```year_model```
 - Read: ```GET /api/vehicles/{id} [ADMIN]``` Should read a vehicle by Id
 - Update: ```PUT /api/vehicles/{id} [ADMIN]``` *Should update a vehicle *
 - Delete: ```DELETE /api/vehicles/{id} [ADMIN]``` *Should delete a vehicle *
